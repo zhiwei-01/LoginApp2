@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3B6A80"
+            android:gravity="center_horizontal"
+            android:text="WaHaHa登入系統"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="272dp"
+            app:srcCompat="@drawable/login" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="17dp"
+                android:text="帳號："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="17dp"
+                android:text="密碼："
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editPW"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/login_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="#CD7E7E"
+                android:gravity="right"
+                android:text="登入系統"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/clear_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="#CD7E7E"
+                android:gravity="right"
+                android:text="清除重填"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
