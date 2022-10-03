@@ -1,5 +1,6 @@
 package csce.loginapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         Button btn = findViewById(R.id.login_btn) ;
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
@@ -24,9 +26,12 @@ public class MainActivity extends AppCompatActivity {
                 if( ( name.getText().toString().equals("wa")) &&
                         ( pw.getText().toString().equals("haha"))){
 
+                    Bundle data = new Bundle();
+                    data.putString("accout",name.getText().toString());
+                    data.putInt("age",24);
                     Intent it = new Intent(getApplicationContext(),UserActivity.class);
-                    startActivity((it));
-
+                    it.putExtras(data);
+                    startActivityForResult(it,100);
                     Toast.makeText(getApplicationContext(),"成功", Toast.LENGTH_LONG).show();
 
                 }
@@ -36,6 +41,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 100){
+            if ( resultCode == 1000) {
+                Bundle da = data.getExtras();
+                String val = da.getString("key");
+                Toast.makeText(getApplicationContext(), "回傳ok", Toast.LENGTH_LONG).show();
+            }
+        }
 
     }
 }
